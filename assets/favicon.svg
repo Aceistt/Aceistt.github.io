@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Aceist logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6ea8fe"/>
+      <stop offset="1" stop-color="#b69dff"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#g)"/>
+  <!-- geometric "A" with its signature dot, echoing the wordmark -->
+  <g fill="none" stroke="#0b0e14" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 47 L32 16 L47 47"/>
+    <path d="M24 35 L40 35"/>
+  </g>
+  <rect x="29.5" y="39.5" width="5" height="5" rx="1" transform="rotate(45 32 42)" fill="#0b0e14"/>
+  <!-- corner brackets -->
+  <g fill="none" stroke="#0b0e14" stroke-width="3" stroke-linecap="round">
+    <path d="M12 19 L12 13 L18 13"/>
+    <path d="M52 45 L52 51 L46 51"/>
+  </g>
+</svg>

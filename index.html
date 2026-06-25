@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terence (Aceistt) — Software Developer</title>
+  <meta name="description" content="Portfolio of Terence — a software developer building websites, mobile apps and tools with C#, Python and React Native." />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="canonical" href="https://aceistt.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Terence (Aceistt) — Software Developer" />
+  <meta property="og:description" content="Software developer building websites, mobile apps and tools with C#, Python and React Native." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aceistt.github.io/" />
+  <meta property="og:image" content="https://aceistt.github.io/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Terence (Aceistt) — Software Developer" />
+  <meta name="twitter:description" content="Software developer building websites, mobile apps and tools with C#, Python and React Native." />
+  <meta name="twitter:image" content="https://aceistt.github.io/assets/og-image.png" />
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Apply saved theme + accent before paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        var prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+        var theme = saved || (prefersLight ? "light" : "dark");
+        if (theme === "light") document.documentElement.setAttribute("data-theme", "light");
+
+        var tv = localStorage.getItem("theme-vars");
+        if (tv) { var o = JSON.parse(tv); for (var k in o) document.documentElement.style.setProperty(k, o[k]); }
+
+        var a = localStorage.getItem("accent");
+        var b = localStorage.getItem("accent2");
+        if (a) document.documentElement.style.setProperty("--accent", a);
+        if (b) document.documentElement.style.setProperty("--accent-2", b);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="js/boot.js"></script>
+</head>
+<body>
+  <span id="top" aria-hidden="true"></span>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <!-- ===== Header / Nav ===== -->
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="#top" aria-label="Home">
+        <img class="brand-logo" src="assets/logo.png" alt="Aceist" width="70" height="30" />
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+          <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a></li>
+          <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="https://github.com/Aceistt" class="nav-link nav-link--cta" target="_blank" rel="noopener">GitHub ↗</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cmdk-trigger" id="cmdkTrigger" type="button" aria-label="Open command palette">
+          <span data-i18n="cmdk.search">Search</span> <kbd>⌘K</kbd>
+        </button>
+        <button class="icon-btn lang-toggle" id="langToggle" type="button" aria-label="Switch language">EN</button>
+
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+          </svg>
+        </button>
+
+        <button class="icon-btn sound-toggle" id="soundToggle" type="button" aria-label="Toggle sound" aria-pressed="false">
+          <svg class="icon-sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/>
+          </svg>
+          <svg class="icon-sound-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M22 9l-6 6M16 9l6 6"/>
+          </svg>
+        </button>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="container hero-inner reveal">
+        <p class="hero-eyebrow" data-i18n="hero.eyebrow">Hi, I'm</p>
+        <h1 class="hero-title">Terence</h1>
+        <p class="hero-role">
+          <span class="typed" id="typed" data-words="Software Developer,React Native Developer,Web Developer,Student @ Curio"></span><span class="type-cursor" aria-hidden="true"></span>
+        </p>
+        <!-- TODO: replace with your own value statement -->
+        <p class="hero-tagline" data-i18n="hero.tagline">
+          I build clean, reliable web applications — turning ideas into fast,
+          accessible products that people enjoy using.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn--primary" data-i18n="hero.viewProjects">View Projects</a>
+          <a href="#contact" class="btn btn--ghost" data-i18n="hero.getInTouch">Get in touch</a>
+          <!-- Save your CV as assets/cv.pdf -->
+          <a href="assets/cv.pdf" class="btn btn--ghost" download>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v12M7 10l5 5 5-5M5 21h14"/>
+            </svg>
+            <span data-i18n="hero.cv">Download CV</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section class="section" id="about">
+      <div class="container about-grid reveal">
+        <div class="about-media">
+          <!-- Save your photo as assets/profile.jpg (square works best).
+               Until then, the "T" placeholder shows if the image is missing. -->
+          <div class="about-photo">
+            <img src="assets/profile.jpg" alt="Terence" class="about-img"
+                 onerror="this.style.display='none'; this.parentNode.classList.add('about-photo--empty');" />
+            <span class="about-photo-fallback" aria-hidden="true">T</span>
+          </div>
+        </div>
+        <div class="about-body">
+          <p class="section-eyebrow" data-i18n="about.eyebrow">About</p>
+          <h2 class="section-title" data-i18n="about.title">A bit about me</h2>
+          <!-- TODO: replace bio with your own -->
+          <p data-i18n="about.p1">
+            I'm a software developer who enjoys building things for the web —
+            from polished front-ends to the APIs and tooling behind them. I care
+            about clean code, thoughtful UX, and shipping work that holds up.
+          </p>
+          <p data-i18n="about.p2">
+            When I'm not coding, I'm usually learning something new, tinkering
+            with side projects, or exploring better ways to solve everyday problems.
+          </p>
+          <ul class="about-facts">
+            <li><strong data-i18n="about.focusLabel">Focus</strong> <span data-i18n="about.focusValue">Web apps &amp; APIs</span></li>
+            <li><strong data-i18n="about.basedLabel">Based in</strong> <span data-i18n="about.basedValue">Netherlands</span></li>
+            <li><strong data-i18n="about.openLabel">Open to</strong> <span data-i18n="about.openValue">Job offers &amp; new opportunities</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Education & Experience ===== -->
+    <section class="section section--alt" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow" data-i18n="exp.eyebrow">Journey</p>
+          <h2 class="section-title" data-i18n="exp.title">Education &amp; experience</h2>
+          <p class="section-lead" data-i18n="exp.lead">Where I'm learning and growing as a developer.</p>
+        </div>
+
+        <div class="timeline-groups">
+          <div class="timeline-group reveal">
+            <h3 class="timeline-group-title" data-i18n="exp.eduTitle">Education</h3>
+            <ol class="timeline">
+              <li class="timeline-item">
+                <div class="timeline-content">
+                  <span class="timeline-date">2024 — 2028</span>
+                  <h4 class="timeline-title" data-i18n="edu.curio.title">Software Development</h4>
+                  <p class="timeline-org">Curio</p>
+                  <p class="timeline-desc" data-i18n="edu.curio.desc">
+                    Studying software development — programming, web development,
+                    databases, and building real projects from the ground up.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="timeline-group reveal">
+            <h3 class="timeline-group-title" data-i18n="exp.expTitle">Experience</h3>
+            <ol class="timeline">
+              <li class="timeline-item">
+                <div class="timeline-content">
+                  <span class="timeline-date" data-i18n="exp.rex.date">Apr 2026 — Jun 2026</span>
+                  <h4 class="timeline-title" data-i18n="exp.rex.title">Software Development Intern</h4>
+                  <p class="timeline-org">Rex Media · Dordrecht</p>
+                  <p class="timeline-desc" data-i18n="exp.rex.desc">
+                    Built a complete website and a mobile application end-to-end, and
+                    shipped functional and technical improvements — gaining experience
+                    across the full development process, from design to implementation.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow" data-i18n="work.eyebrow">Work</p>
+          <h2 class="section-title" data-i18n="work.title">Selected projects</h2>
+          <p class="section-lead" data-i18n="work.lead">A few things I've built — from console apps to the web.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="card reveal">
+            <div class="card-thumb card-thumb--hisuri" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="7" y="2" width="10" height="20" rx="2.5"/>
+                <path d="M11 5h2"/>
+                <path d="M9.5 14.5 11 16l3.5-3.5"/>
+              </svg>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Hisuri</h3>
+              <p class="card-desc" data-i18n="proj.hisuri.desc">
+                A website and mobile app built during my internship at Rex Media —
+                taking a real product from design through to a working registration
+                platform.
+              </p>
+              <ul class="tag-list">
+                <li class="tag">React Native</li>
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+              </ul>
+              <div class="card-links">
+                <a href="hisuri.html" class="card-link" data-i18n="proj.caseStudy">Case study →</a>
+                <a href="https://register.hisuri.com" class="card-link" target="_blank" rel="noopener">Live ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-thumb card-thumb--rpg" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.5 4 20 4 20 9.5 9 20.5 6.5 18 3.5 21M14.5 4 6 12.5 8.5 15 17 6.5M14.5 4 20 9.5"/>
+                <circle cx="6.5" cy="17.5" r="1"/>
+              </svg>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Amazing RPG</h3>
+              <p class="card-desc" data-i18n="proj.rpg.desc">
+                A text-based role-playing game that runs entirely in the console,
+                built in C# — combat, exploration, and game state from scratch.
+              </p>
+              <ul class="tag-list">
+                <li class="tag">C#</li>
+                <li class="tag">.NET</li>
+                <li class="tag">Console</li>
+              </ul>
+              <div class="card-links">
+                <a href="https://github.com/Aceistt/AmazingRPG" class="card-link" target="_blank" rel="noopener">Code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-thumb card-thumb--ttt" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 3v18M15 3v18M3 9h18M3 15h18"/>
+                <path d="M4.5 4.5 7.5 7.5M7.5 4.5 4.5 7.5"/>
+                <circle cx="19.5" cy="6" r="1.6"/>
+                <circle cx="6" cy="19.5" r="1.6"/>
+                <path d="M16.5 16.5 19.5 19.5M19.5 16.5 16.5 19.5"/>
+              </svg>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Tic-Tac-Toe</h3>
+              <p class="card-desc" data-i18n="proj.ttt.desc">
+                A classic tic-tac-toe game built with React — interactive board,
+                turn tracking, and win detection.
+              </p>
+              <ul class="tag-list">
+                <li class="tag">React</li>
+                <li class="tag">JavaScript</li>
+              </ul>
+              <div class="card-links">
+                <a href="https://codesandbox.io/p/github/Aceistt/react" class="card-link" target="_blank" rel="noopener">Live ↗</a>
+                <a href="https://github.com/Aceistt/tic-tac-toe-react" class="card-link" target="_blank" rel="noopener">Code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-thumb card-thumb--booking" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4.5" width="18" height="16" rx="2"/>
+                <path d="M3 9h18M8 3v3M16 3v3"/>
+                <path d="M8.5 14.5 11 17l4.5-4.5"/>
+              </svg>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Booking</h3>
+              <p class="card-desc" data-i18n="proj.booking.desc">
+                A Python script for handling check-in and booking flows —
+                automating a repetitive reservation task.
+              </p>
+              <ul class="tag-list">
+                <li class="tag">Python</li>
+                <li class="tag">Automation</li>
+              </ul>
+              <div class="card-links">
+                <a href="https://github.com/Aceistt/Booking" class="card-link" target="_blank" rel="noopener">Code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-thumb card-thumb--logbook" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/>
+                <path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20v3H6.5A2.5 2.5 0 0 1 4 20.5z"/>
+                <path d="M8 7.5h8M8 11h6"/>
+              </svg>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Logbook</h3>
+              <p class="card-desc" data-i18n="proj.logbook.desc">
+                A Python logbook tool for recording and reviewing entries over time —
+                a lightweight, practical utility.
+              </p>
+              <ul class="tag-list">
+                <li class="tag">Python</li>
+              </ul>
+              <div class="card-links">
+                <a href="https://github.com/Aceistt/Logbook" class="card-link" target="_blank" rel="noopener">Code ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Live repos pulled from the GitHub API; hidden until/unless they load -->
+        <div class="more-github" id="moreGithub" hidden>
+          <h3 class="more-github-title" data-i18n="more.title">More on GitHub</h3>
+
+          <!-- Live stats (populated by JS) -->
+          <div class="gh-stats" id="ghStats" hidden>
+            <div class="gh-counters">
+              <div class="gh-counter"><span class="gh-num" id="ghRepos">0</span><span class="gh-label" data-i18n="gh.repos">Repositories</span></div>
+              <div class="gh-counter"><span class="gh-num" id="ghStars">0</span><span class="gh-label" data-i18n="gh.stars">Stars earned</span></div>
+              <div class="gh-counter"><span class="gh-num" id="ghLangs">0</span><span class="gh-label" data-i18n="gh.langs">Languages</span></div>
+            </div>
+            <div class="gh-langbar-wrap">
+              <p class="gh-langbar-title" data-i18n="gh.breakdown">Language breakdown</p>
+              <div class="gh-langbar" id="ghLangBar"></div>
+              <ul class="gh-legend" id="ghLegend"></ul>
+            </div>
+          </div>
+
+          <div class="repo-grid" id="repoGrid"></div>
+          <p class="more-github-link">
+            <a href="https://github.com/Aceistt?tab=repositories" target="_blank" rel="noopener" data-i18n="more.link">See all repositories ↗</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Skills & Contact ===== -->
+    <section class="section section--alt" id="contact">
+      <div class="container contact-grid">
+        <div class="skills reveal">
+          <p class="section-eyebrow" data-i18n="skills.eyebrow">Toolbox</p>
+          <h2 class="section-title" data-i18n="skills.title">Skills &amp; tech</h2>
+          <!-- Aligned with the languages/tech in your projects -->
+          <ul class="tag-list tag-list--lg">
+            <li class="tag">C#</li>
+            <li class="tag">.NET</li>
+            <li class="tag">Python</li>
+            <li class="tag">JavaScript</li>
+            <li class="tag">React</li>
+            <li class="tag">React Native</li>
+            <li class="tag">HTML</li>
+            <li class="tag">CSS</li>
+            <li class="tag">Git</li>
+          </ul>
+        </div>
+
+        <div class="contact reveal">
+          <p class="section-eyebrow" data-i18n="contact.eyebrow">Contact</p>
+          <h2 class="section-title" data-i18n="contact.title">Let's work together</h2>
+          <p class="section-lead" data-i18n="contact.lead">Have a project in mind or just want to say hi? Reach out.</p>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:terence.werman@outlook.com">
+              <span class="contact-link-label" data-i18n="contact.email">Email</span>
+              <span class="contact-link-value">terence.werman@outlook.com</span>
+            </a>
+            <a class="contact-link" href="https://github.com/Aceistt" target="_blank" rel="noopener">
+              <span class="contact-link-label">GitHub</span>
+              <span class="contact-link-value">github.com/Aceistt</span>
+            </a>
+            <a class="contact-link" href="https://linkedin.com/in/terence-werman" target="_blank" rel="noopener">
+              <span class="contact-link-label">LinkedIn</span>
+              <span class="contact-link-value">linkedin.com/in/terence-werman</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Guestbook ===== -->
+    <section class="section" id="guestbook">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow" data-i18n="guest.eyebrow">Guestbook</p>
+          <h2 class="section-title" data-i18n="guest.title">Sign the guestbook</h2>
+          <p class="section-lead" data-i18n="guest.lead">Sign in with GitHub and leave a message — powered by giscus.</p>
+        </div>
+        <div class="guestbook reveal" id="guestbookMount"></div>
+        <p class="guestbook-note" id="guestbookNote" hidden>
+          Guestbook isn't configured yet — add your giscus repo/category IDs in
+          <code>js/guestbook.js</code>. See the instructions at the top of that file.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <!-- CTA -->
+      <div class="footer-cta reveal">
+        <div>
+          <span class="footer-status">
+            <span class="footer-status-dot" aria-hidden="true"></span>
+            <span data-i18n="footer.status">Available for new opportunities</span>
+          </span>
+          <h2 class="footer-cta-title" data-i18n="footer.ctaTitle">Let's build something together.</h2>
+        </div>
+        <a href="mailto:terence.werman@outlook.com" class="btn btn--primary footer-cta-btn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/>
+            <path d="m3 6 9 7 9-7"/>
+          </svg>
+          <span data-i18n="footer.ctaBtn">Say hello</span>
+        </a>
+      </div>
+
+      <!-- Columns -->
+      <div class="footer-grid">
+        <div class="footer-col footer-col--brand">
+          <a class="brand" href="#top" aria-label="Home">
+            <span class="brand-mark" aria-hidden="true">
+          <svg class="brand-glyph" viewBox="0 0 46 24" fill="none">
+            <path d="M5 7l5 5-5 5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="16" y="17.5" font-family="inherit" font-size="15" font-weight="800" letter-spacing="-1" fill="currentColor">TW</text>
+          </svg>
+        </span>
+            <span class="brand-text">Aceistt</span>
+          </a>
+          <p class="footer-blurb" data-i18n="footer.blurb">
+            Software developer building websites, mobile apps and tools.
+          </p>
+          <div class="footer-socials">
+            <a href="https://github.com/Aceistt" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/terence-werman" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/>
+              </svg>
+            </a>
+            <a href="mailto:terence.werman@outlook.com" class="social-link" aria-label="Email">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/>
+                <path d="m3 6 9 7 9-7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-col" aria-label="Footer">
+          <h3 class="footer-col-title" data-i18n="footer.navTitle">Navigate</h3>
+          <ul class="footer-links">
+            <li><a href="#about" data-i18n="nav.about">About</a></li>
+            <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+            <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title" data-i18n="footer.elsewhereTitle">Elsewhere</h3>
+          <ul class="footer-links">
+            <li><a href="https://github.com/Aceistt" target="_blank" rel="noopener">GitHub ↗</a></li>
+            <li><a href="https://linkedin.com/in/terence-werman" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> Terence · <span data-i18n="footer.built">Built with HTML, CSS &amp; JS.</span></p>
+        <span class="footer-clock" id="footerClock" aria-hidden="true"></span>
+        <a href="#top" class="footer-top" data-i18n="footer.top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating scroll-to-top -->
+  <a href="#top" class="to-top" id="toTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </a>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/achievements.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/status.js"></script>
+  <script src="js/hero-bg.js"></script>
+  <script src="js/accent.js"></script>
+  <script src="js/themes.js"></script>
+  <script src="js/fx.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/snake.js"></script>
+  <script src="js/breakout.js"></script>
+  <script src="js/game2048.js"></script>
+  <script src="js/gravity.js"></script>
+  <script src="js/screensaver.js"></script>
+  <script src="js/shortcuts.js"></script>
+  <script src="js/extras.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/guestbook.js"></script>
+
+  <!--
+    Privacy-friendly analytics via GoatCounter (no cookies, no personal data).
+    Setup: create a free site at https://www.goatcounter.com, then replace
+    YOURCODE below with your chosen subdomain. Until then it simply no-ops.
+  -->
+  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
