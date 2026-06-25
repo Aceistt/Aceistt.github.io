@@ -33,7 +33,7 @@
       "about.basedLabel": "Based in",
       "about.basedValue": "Netherlands",
       "about.openLabel": "Open to",
-      "about.openValue": "Job offers & new opportunities",
+      "about.openValue": "New opportunities",
 
       "exp.eyebrow": "Journey",
       "exp.title": "Education & experience",
@@ -110,7 +110,7 @@
       "about.basedLabel": "Woonachtig in",
       "about.basedValue": "Nederland",
       "about.openLabel": "Open voor",
-      "about.openValue": "Vacatures & nieuwe kansen",
+      "about.openValue": "Nieuwe kansen",
 
       "exp.eyebrow": "Mijn pad",
       "exp.title": "Opleiding & ervaring",
